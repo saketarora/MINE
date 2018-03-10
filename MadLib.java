@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -72,10 +72,10 @@ public class MadLib
 	{
 		try{
 			Scanner file = new Scanner(new File("H:/APCSA/Unit 10/nouns.dat"));
-			while (file.hasNextline() == true){
-				nouns.add(file.next());
+			while (file.hasNextline(){
+				nouns.add(file.nextLine());
 			}
-			file.close();
+			
 		
 		
 		
@@ -93,10 +93,10 @@ public class MadLib
 	{
 		try{
 			Scanner file = new Scanner(new File("H:/APCSA/Unit 10/verbs.dat"));
-			while (file.hasNextLine() == true){
+			while (file.hasNextLine()){
 				verbs.add(file.nextLine());
 			}
-			file.close();
+			
 		}
 		catch(Exception e)
 		{
@@ -108,10 +108,10 @@ public class MadLib
 	{
 		try{
 			Scanner file = new Scanner(new File("H:/APCSA/Unit 10/adjectives.dat"));
-			while (file.hasNextLine() == true){
+			while (file.hasNextLine()){
 				adjectives.add(file.nextLine());
 			}
-			file.close();
+			
 		}
 		catch(Exception e)
 		{
