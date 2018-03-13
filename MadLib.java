@@ -72,7 +72,7 @@ public class MadLib
 	{
 		try{
 			Scanner file = new Scanner(new File("H:/APCSA/Unit 10/nouns.dat"));
-			while (file.hasNextline(){
+			while (file.hasNextLine()){
 				nouns.add(file.nextLine());
 			}
 			
