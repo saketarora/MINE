@@ -10,24 +10,37 @@ public class Word implements Comparable<Word>
 {
 	private String word;
 
-	public Word( String s )
+	public Word( String s)
 	{
 
 
 	}
 
-	public int compareTo( Word rhs )
+	private int numVowels()
 	{
-		
-		
-		
-		
-		
-		return 0;
+		String vowels = "AEIOUaeiou";
+		int vowelCount=0;
+
+
+
+
+
+
+
+		return vowelCount;
+	}
+
+	public int compareTo(Word rhs)
+	{
+
+
+
+	
+		return -1;
 	}
 
 	public String toString()
 	{
-		return "";
+		return word;
 	}
 }
