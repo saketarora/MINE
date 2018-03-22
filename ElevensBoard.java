@@ -71,7 +71,30 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		
+		List<Integer> Listi = cardIndexes();
+		for (int i = 0; i < Listi.size(); i++){
+			Card card = cardAt(Listi.get(i));
+			for (int k = 0; k < Listi.size(); k++){
+				Card secCard = cardAt(Listi.get(k));
+				List<Integer> checklist = new ArrayList<Integer>();
+				checklist.add(Listi.get(i));
+				checklist.add(Listi.get(k));
+				if (containsPairSum11(checklist) == true){
+					return true;
+				}
+				if (card.pointValue() == 0 && secCard.pointValue() == 0){
+					for (int j = 0; j < Listi.size(); j++){
+						List<Integer> third = new ArrayList<Integer>();
+						third.add(Listi.get(i));
+						third.add(Listi.get(k));
+						third.add(Listi.get(j));
+						if (containsJQK(third) == true){
+							return true;
+						}
+					}
+				}
+			}
+		}
 		return false;
 	}
 
@@ -85,7 +108,12 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		if (selectedCards.get(0) + selectedCards.get(1) == 11){
+		int sum = 0;
+		for (int i = 0; i < selectedCards.size(); i++){
+			Card card = cardAt(selectedCards.get(i));
+			sum = (sum + card.pointValue());
+		}
+		if (sum == 11){
 			return true;
 		}
 		return false;
@@ -101,8 +129,20 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		if (selectedCards.get(0) + selectedCards.get(1) + selectedCards.get(2) == 0){
-			return true;
+		boolean check1 = false, check2 = false, check3 = false;
+		for (int i = 0; i < selectedCards.size(); i++){
+			Card card = cardAt(selectedCards.get(i));
+			if (card.rank() == "jack"){
+				check1 = true;
+			}
+			else if (card.rank() == "queen"){
+				check2 = true;
+			}
+			else if (card.rank() == "king"){
+				check3 = true;
+			}
+			if (check1 && check2 && check3 == true)
+				return true;
 		}
 		return false;
 	}
