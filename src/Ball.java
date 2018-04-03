@@ -86,6 +86,63 @@ public class Ball extends Block
 	{
 		return ySpeed;
 	}
+	
+	public boolean collideLeft(Object obj){
+		Block stuff = (Block) obj;
+		
+		int ballX = this.getX();
+		int ballY = this.getY();
+		int stuffX = stuff.getX();
+		int stuffY = stuff.getY();
+		
+		if (ballX <= stuffX + stuff.getWidth() + Math.abs(this.getXSpeed()) 
+		&& (ballY >= stuffY && ballY <= stuffY + stuff.getHeight() || ballY + this.getHeight() >= stuffY && ballY + this.getHeight() < stuffY + stuff.getHeight())){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
+	public boolean collideRight(Object obj){
+		Block stuff = (Block) obj;
+		
+		int ballX = this.getX();
+		int ballY = this.getY();
+		int ballWidth = this.getWidth();
+		int ballHeight = stuff.getY();
+		int stuffX = stuff.getX();
+		int stuffY = stuff.getY();
+		
+		if (ballX + ballWidth >= stuffX - Math.abs(this.getXSpeed()) 
+		&& (ballY >= stuffY && ballY <= stuffY + ballHeight || ballY + ballHeight >= stuffY && ballY + ballHeight < stuffY + stuff.getHeight())){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
+	public boolean collideTop(Object obj){
+		int top = (Integer) obj;
+		if(this.getY() <= top){
+			return true;
+		}
+		else
+			return false;
+	}
+	public boolean collideBottom(Object obj){
+			int bottom = (Integer) obj;
+			if(this.getY() + this.getHeight()>= bottom){
+				return true;
+			}
+			else
+				return false;
+	}
+	
+	
 
    //add a toString() method
 	public String toString() {

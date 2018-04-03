@@ -26,14 +26,12 @@ public class Block implements Locatable
 	public Block(int x, int y){
 		setX(x);
 		setY(y);
-		color = Color.BLACK;
 	}
 	public Block(int x, int y, int width, int height){
 		setX(x);
 		setY(y);
 		setHeight(height);
 		setWidth(width);
-		color = Color.BLACK;
 	}
 	
 	public Block(int x, int y, int width, int height, Color color){
@@ -42,6 +40,12 @@ public class Block implements Locatable
 		setHeight(height);
 		setWidth(width);
 		setColor(color);
+	}
+	public Block(int x, int y, int width, int height, Color color, int xSpd, int ySpd){
+		setX(x);
+		setY(y);
+		setHeight(height);
+		setWidth(width);
 	}
 	
 	public void setPos(int x , int y){
@@ -107,7 +111,7 @@ public class Block implements Locatable
 		return width;
 	}
 	public int getHeight(){
-		return height;
+		return xPos;
 	}
 	public Color getColor(){
 		return color;
