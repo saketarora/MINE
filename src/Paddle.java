@@ -43,7 +43,9 @@ public class Paddle extends Block
    //add the other Paddle constructors
 
 
-
+   public void setSpeed(int x) {
+	   speed = x;
+   }
 
 
 
@@ -69,7 +71,22 @@ public class Paddle extends Block
    public int getSpeed() {
 	   return speed;
    }
-   
+	public boolean collideTop(Object obj){
+		int top = (Integer) obj;
+		if(this.getY() <= top){
+			return true;
+		}
+		else
+			return false;
+	}
+	public boolean collideBottom(Object obj){
+			int bottom = (Integer) obj;
+			if(this.getY() + this.getHeight()>= bottom){
+				return true;
+			}
+			else
+				return false;
+	}
    
    //add a toString() method
    public String toString() {

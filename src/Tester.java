@@ -26,7 +26,7 @@ public class Tester extends JFrame
 		((Component)padTest).setFocusable(true);			
 		getContentPane().add(padTest);
 				
-		setVisible(true);
+		setVisible(true); 
 	}
 	
 	public static void main( String args[] )

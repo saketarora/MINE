@@ -1,9 +1,3 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -22,12 +16,11 @@ class BallTestTwo extends Canvas implements Runnable
 
 		//instantiate a new Ball
 
-
+		ball = new Ball(20, 20, 30, 30, Color.BLACK);
 		//test the Ball thoroughly
 		
-
-		//test all constructors
-
+		
+		
 
 		new Thread(this).start();
 	}
@@ -51,8 +44,8 @@ class BallTestTwo extends Canvas implements Runnable
 			ball.setYSpeed(-ball.getYSpeed());
 		}
 	}
-	
-   public void run()
+
+public void run()
    {
    	try
    	{
@@ -63,6 +56,7 @@ class BallTestTwo extends Canvas implements Runnable
          }
       }catch(Exception e)
       {
+    	  System.out.println(e.getMessage());
       }
   	}	
 }
