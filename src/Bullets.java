@@ -22,11 +22,15 @@ public class Bullets
 
 	public void add(Ammo al)
 	{
+		ammo.add(al);
 	}
 
 	//post - draw each Ammo
 	public void drawEmAll( Graphics window )
 	{
+		for(Ammo al: ammo) {
+			al.draw(window);
+		}
 	}
 
 	public void moveEmAll()

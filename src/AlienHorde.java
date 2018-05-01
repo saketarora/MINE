@@ -14,26 +14,37 @@ import java.util.List;
 
 public class AlienHorde
 {
+	
 	private List<Alien> aliens;
 
 	public AlienHorde(int size)
 	{
+		//aliens
 	}
 
 	public void add(Alien al)
 	{
+		aliens.add(al);
 	}
 
 	public void drawEmAll( Graphics window )
 	{
+		for(Alien al : aliens) {
+			al.draw(window);
+		}
 	}
 
 	public void moveEmAll()
 	{
+		
 	}
 
 	public void removeDeadOnes(List<Ammo> shots)
 	{
+		
+	}
+	public List getAliens() {
+		return aliens;
 	}
 
 	public String toString()
